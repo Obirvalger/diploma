@@ -10,7 +10,6 @@ tmp*
 *~
 
 # игнорировать latex файлы
-*.tex
 *.aux
 *.log
 *.toc
