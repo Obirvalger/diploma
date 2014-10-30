@@ -24,8 +24,9 @@ long_line_column=80
 
 [files]
 current_page=0
-FILE_NAME_0=0;LaTeX;0;EUTF-8;2;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.tex;0;4
+FILE_NAME_0=6136;LaTeX;0;EUTF-8;2;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.tex;0;4
 FILE_NAME_1=34;Make;0;EUTF-8;1;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2FMakefile;0;4
+FILE_NAME_2=3256;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fyadisk%2Fprog%2Flatex%2FLocal%2Fcourse%2Fdocument.tex;0;4
 
 [VTE]
 last_dir=/home/ogneslav/prog/diploma
