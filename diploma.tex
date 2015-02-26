@@ -2,11 +2,42 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{longtable, moreverb}
-\usepackage{ amssymb, latexsym, amsmath}
-
+\usepackage{ amssymb, latexsym, amsmath, amsthm}
+\newtheorem{myth}{Теорема}
+% \newtheorem*{myth}{Теорема}
+% \newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+    % {\hbox{$\mathsurround=0pt #1$}}{}}
 \sloppy
 
+\xdef\LastDeclaredEncoding{T2A}
+% Переносы математики.
+\begingroup
+\catcode`\+\active\gdef+{\mathchar8235\nobreak\discretionary{}{\usefont{OT1}{cmr}{m}{n}\char43}{}}
+\catcode`\-\active\gdef-{\mathchar8704\nobreak\discretionary{}{\usefont{OMS}{cmsy}{m}{n}\char0}{}}
+\catcode`\=\active\gdef={\mathchar12349\nobreak\discretionary{}{\usefont{OT1}{cmr}{m}{n}\char61}{}}
+\catcode`\<\active\gdef<{\mathchar"313C\nobreak\discretionary{}{\usefont{OML}{cmm}{m}{n}\char60}{}}
+\catcode`\>\active\gdef>{\mathchar"313E\nobreak\discretionary{}{\usefont{OML}{cmm}{m}{n}\char62}{}}
+\endgroup
+\def\times{\mathchar8706\nobreak\discretionary{}{\usefont{OMS}{cmsy}{m}{n}\char2}{}}
+\def\subset{\mathchar"321A\nobreak\discretionary{}{\usefont{OMS}{cmsy}{m}{n}\char26}{}}
+%\supset,\subseteq,\notin
+\def\supset{\mathchar"321B\nobreak\discretionary{}{\usefont{OMS}{cmsy}{m}{n}\char27}{}}
+\def\subseteq{\mathchar"3212\nobreak\discretionary{}{\usefont{OMS}{cmsy}{m}{n}\char18}{}}
+\def\neq{\not=\nobreak\discretionary{}{\usefont{OMS}{cmsy}{m}{n}\char54\usefont{OT1}{cmr}{m}{n}\char61}{}}
+\def\sim{\mathchar"3218\nobreak\discretionary{}{\usefont{OMS}{cmsy}{m}{n}\char24}{}}
+\def\in{\mathchar"3232\nobreak\discretionary{}{\usefont{OMS}{cmsy}{m}{n}\char50}{}}
+\def\to{\mathchar"3221\nobreak\discretionary{}{\usefont{OMS}{cmsy}{m}{n}\char33}{}}
+\def\?#1{#1\nobreak\discretionary{}{\hbox{$\mathsurround=0pt #1$}}{}}
+% Конец переносов математики.
+
 \begin{document}
+% Восстанавливаем после amsmath.
+\begingroup \catcode`\"=12
+\gdef\newmcodes@{\mathcode`\'39\mathcode`\*42\mathcode`\."613A%
+\mathcode`\-"8000\mathcode`\/47\mathcode`\:"603A\relax}%
+\endgroup
+\mathcode`\=="8000 \mathcode`\+="8000 \mathcode`\-="8000
+\mathcode`\<="8000 \mathcode`\>="8000
 
 %\tableofcontents
 
@@ -50,7 +81,7 @@ $$
 
 При построении ПЛМ рассматривают и другие полиномиальные формы. Например класс обобщенных полиномиальных форм.
 В классе обобщенных полиномиальных форм, в отличие от класса поляризованных полиномиальных форм, переменные могут иметь
-различную поляризацию в разных слагаемых. В статье К.\,Д.\,Кириченко~\cite{kk05}, опубликованной в 2005 г., получена верхняя оценка
+различную поляризацию в разных слагаемых. В статье К.\,Д.\,Кириченко~\cite{kk05}, опубликованной в 2005\,г., получена верхняя оценка
 функции Шеннона в классе обобщенных полиномиальных форм функций алгебры логики :
 $$
 L^{\text{О.П.}}_2(n) < \frac{2 ^ {n + 1}(\log_2n+1)}{n}.
@@ -67,6 +98,33 @@ $$
 $$
 L_3(n) \geqslant \left[\frac{3}{4}3^n\right].
 $$
+
+\section{Теоремы}
+
+\begin{myth} При $n \geqslant 1 $ для периодических функций пятизначной логики $f_n = f^{\left(n\right)}_{\left(1144\right)}$,
+$g_n = f^{\left(n\right)}_{\left(1441\right)}$ верны следующие равенства:
+\end{myth}
+
+$ f_{n+1} = j_0(x_{n+1})f_n + j_1(x_{n+1})g_n - j_2(x_{n+1})f_n - j_3(x_{n+1})g_n + j_4(x_{n+1})f_n
+ = 4 \, f_{n} x_{n+1}^{4} + {\left(3 \, f_{n} + 2 \, g_{n}\right)} x_{n+1}^{3} + {\left(3 \, f_{n} + 3 \, g_{n}\right)} x_{n+1}^{2} + {\left(4 \, f_{n} + g_{n}\right)} x_{n+1} + f_{n}
+ = 4 \, f_{n} {\left(x_{n+1} + 1\right)}^{4} + {\left(2 \, f_{n} + 2 \, g_{n}\right)} {\left(x_{n+1} + 1\right)}^{3} + {\left(3 \, f_{n} + 2 \, g_{n}\right)} {\left(x_{n+1} + 1\right)}^{2} + {\left(f_{n} + g_{n}\right)} {\left(x_{n+1} + 1\right)} + f_{n}
+ = 4 \, f_{n} {\left(x_{n+1} + 2\right)}^{4} + {\left(f_{n} + 2 \, g_{n}\right)} {\left(x_{n+1} + 2\right)}^{3} + {\left(f_{n} + g_{n}\right)} {\left(x_{n+1} + 2\right)}^{2} + 3 \, g_{n} {\left(x_{n+1} + 2\right)} + 4 \, g_{n}
+ = 4 \, f_{n} {\left(x_{n+1} + 3\right)}^{4} + 2 \, g_{n} {\left(x_{n+1} + 3\right)}^{3} + 2 \, f_{n} {\left(x_{n+1} + 3\right)}^{2} + 2 \, g_{n} {\left(x_{n+1} + 3\right)} + 4 \, f_{n}
+ = 4 \, f_{n} {\left(x_{n+1} + 4\right)}^{4} + {\left(4 \, f_{n} + 2 \, g_{n}\right)} {\left(x_{n+1} + 4\right)}^{3} + {\left(f_{n} - g_{n}\right)} {\left(x_{n+1} + 4\right)}^{2} + 3 \, g_{n} {\left(x_{n+1} + 4\right)} + g_{n}
+$
+
+\begin{myth} При $n \geqslant 1 $ для периодических функций пятизначной логики $f_n = f^{\left(n\right)}_{\left(1144\right)}$,
+$g_n = f^{\left(n\right)}_{\left(1441\right)}$ верны следующие равенства:
+\end{myth}
+
+$ g_{n+1} = j_0(x_{n+1})g_n - j_1(x_{n+1})f_n - j_2(x_{n+1})g_n + j_3(x_{n+1})f_n + j_4(x_{n+1})g_n
+ = 4 \, g_{n} x_{n+1}^{4} + {\left(3 \, f_{n} + 3 \, g_{n}\right)} x_{n+1}^{3} + {\left(2 \, f_{n} + 3 \, g_{n}\right)} x_{n+1}^{2} + {\left(4 \, f_{n} + 4 \, g_{n}\right)} x_{n+1} + g_{n}
+ = 4 \, g_{n} {\left(x_{n+1} + 1\right)}^{4} + {\left(3 \, f_{n} + 2 \, g_{n}\right)} {\left(x_{n+1} + 1\right)}^{3} + {\left(3 \, f_{n} + 3 \, g_{n}\right)} {\left(x_{n+1} + 1\right)}^{2} + {\left(4 \, f_{n} + g_{n}\right)} {\left(x_{n+1} + 1\right)} + g_{n}
+ = 4 \, g_{n} {\left(x_{n+1} + 2\right)}^{4} + {\left(3 \, f_{n} + g_{n}\right)} {\left(x_{n+1} + 2\right)}^{3} + 4 \, {\left(f_{n} + 4 \, g_{n}\right)} {\left(x_{n+1} + 2\right)}^{2} + 2 \, f_{n} {\left(x_{n+1} + 2\right)} + f_{n}
+ = 4 \, g_{n} {\left(x_{n+1} + 3\right)}^{4} + 3 \, f_{n} {\left(x_{n+1} + 3\right)}^{3} + 2 \, g_{n} {\left(x_{n+1} + 3\right)}^{2} + 3 \, f_{n} {\left(x_{n+1} + 3\right)} + 4 \, g_{n}
+ = 4 \, g_{n} {\left(x_{n+1} + 4\right)}^{4} + {\left(3 \, f_{n} + 4 \, g_{n}\right)} {\left(x_{n+1} + 4\right)}^{3} + {\left(f_{n} + g_{n}\right)} {\left(x_{n+1} + 4\right)}^{2} + 2 \, f_{n} {\left(x_{n+1} + 4\right)} + 4 \, f_{n}
+$
+
 
 \makeatletter
 \renewcommand*{\@biblabel}[1]{\hfill#1.}

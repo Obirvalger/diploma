@@ -6,7 +6,7 @@ replace_tabs=false
 
 [indentation]
 indent_width=4
-indent_type=2
+indent_type=0
 indent_hard_tab_width=8
 detect_indent=true
 detect_indent_width=false
@@ -14,7 +14,7 @@ indent_mode=2
 
 [project]
 name=diploma
-base_path=/home/ogneslav/prog/diploma/
+base_path=/home/ogneslav/prog/diploma
 description=
 file_patterns=
 
@@ -23,18 +23,12 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=0
-FILE_NAME_0=6136;LaTeX;0;EUTF-8;2;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.tex;0;4
-FILE_NAME_1=34;Make;0;EUTF-8;1;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2FMakefile;0;4
-FILE_NAME_2=3256;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fyadisk%2Fprog%2Flatex%2FLocal%2Fcourse%2Fdocument.tex;0;4
+current_page=1
+FILE_NAME_0=0;Sage;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.sage;0;4
+FILE_NAME_1=0;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.tex;0;4
+FILE_NAME_2=739;None;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.geany;0;4
 
 [VTE]
 last_dir=/home/ogneslav/prog/diploma
 
 [build-menu]
-EX_00_LB=V_iew PDF File
-EX_00_CM=atril "%e.pdf"
-EX_00_WD=
-EX_01_LB=_View DVI File
-EX_01_CM=atril "%e.dvi"
-EX_01_WD=
