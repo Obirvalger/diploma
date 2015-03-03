@@ -56,10 +56,10 @@ def polymod(p1, x, polar, k):
         
 # '''
 
-def proof(functionList, fname):
+def proof(functionList, fname, ifunc = -1):
     s = ''
     z1,z2 = GF(5)['z1, z2'].gens()
-    for l in range(2,4):
+    for l in range(k):
         # z1,z2 = GF(5)['z1, z2'].gens()
         z2 = z1 - l
         # print functionList[l]
@@ -83,12 +83,20 @@ def proof(functionList, fname):
         # s = q.coefficients(z1)
         '''
         s += '$$'
+        if (ifunc == -1):
+            sq = [str(q(z1=i+l)) for i in range(k)]
+        else:
+            sq = [modcoeffs(str(flist[l](x=i-0)+ifunc*glist[l](x=i-0)),k) for i in range(k)]
+            if (l != 3):
+                sq1 = [modcoeffs(str(q(z1=i+l)),k) for i in range(k)]
+                if (sq1 != sq):
+                    raise Exception(l,ifunc,sq1,sq)
         # print l, q.collect(z1)
         # s1 = '\n'.join([modcoeffs(' + '.join([str(q.coeff(z1,j) * ((i+l)%k)^j) for j in \
         # range(k-1,-1,-1)]), k) + ' =' for i in range(k)])
         # print s1
         s += '$$\n$$'.join([fname + '(' + str(i) + ') = ' + modcoeffs(' + '.join([str(q.coeff(z1,j) * ((i+l)%k)^j) for j in \
-        range(k-1,-1,-1)]), k) + ' = ' + str(q(z1=i+l)) for i in range(k)]) + '$$\n'
+        range(k-1,-1,-1)]), k) + ' = ' + sq[i] for i in range(k)]) + '$$\n'
         s = s.replace('*', '\,')
         s += '\n'
         # s = modcoeffs(s,k)
@@ -146,9 +154,9 @@ $g_n = f^{\left(n\right)}_{\left(1441\right)}$ верны следующие р�
         # print flist[j]
         # l.append((flist[j](x=z1) + i * glist[j](x=z1)).collect(z2)(z2=x+j))
     s += '\n$'
-    # s += r'\begin{proof}' + '\n'
-    # s += proof(l, 's_{n+1}^'+si)
-    # s += r'\end{proof}' + '\n'
+    s += r'\begin{proof}' + '\n'
+    s += proof(l, 's_{n+1}^'+si, i)
+    s += r'\end{proof}' + '\n'
     print s
     sdict['s_{n+1}^'+si] = l
 
