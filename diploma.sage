@@ -58,6 +58,7 @@ def polymod(p1, x, polar, k):
 
 def proof(functionList, fname, ifunc = -1):
     s = ''
+    s += r'\begin{proof}' + '\n' + '\nПервое равенство следует из теоремы 1.\n\n'
     z1,z2 = GF(5)['z1, z2'].gens()
     for l in range(k):
         # z1,z2 = GF(5)['z1, z2'].gens()
@@ -82,7 +83,8 @@ def proof(functionList, fname, ifunc = -1):
             q1 += q.coeff(z1,lj) * GF(k)(2^lj)
         # s = q.coefficients(z1)
         '''
-        s += '$$'
+        s += 'При поляризации $x_{n+1}$, когда $d_{n+1} = ' + str(l) + '$\n'
+        s += '$$\\begin{array}{l}\n'
         if (ifunc == -1):
             sq = [str(q(z1=i+l)) for i in range(k)]
         else:
@@ -95,12 +97,12 @@ def proof(functionList, fname, ifunc = -1):
         # s1 = '\n'.join([modcoeffs(' + '.join([str(q.coeff(z1,j) * ((i+l)%k)^j) for j in \
         # range(k-1,-1,-1)]), k) + ' =' for i in range(k)])
         # print s1
-        s += '$$\n$$'.join([fname + '(' + str(i) + ') = ' + modcoeffs(' + '.join([str(q.coeff(z1,j) * ((i+l)%k)^j) for j in \
-        range(k-1,-1,-1)]), k) + ' = ' + sq[i] for i in range(k)]) + '$$\n'
+        s += ' \\\\\n'.join([fname + r'(\bar{x}_n, ' + str(i) + ') = ' + modcoeffs(' + '.join([str(q.coeff(z1,j) * ((i+l)%k)^j) \
+        for j in range(k-1,-1,-1)]), k) + ' = ' + sq[i] for i in range(k)]) + ' \\\\\n'
         s = s.replace('*', '\,')
-        s += '\n'
+        s += '\\end{array}$$\n'
         # s = modcoeffs(s,k)
-    return s + '\n' 
+    return s + '\n' + r'\end{proof}' + '\n'
 
 z1,z2 = GF(5)['z1, z2'].gens()
 s = r'''\begin{myth} При $n \geqslant 1 $ для периодических функций пятизначной логики $f_n = f^{\left(n\right)}_{\left(1144\right)}$,
@@ -113,9 +115,9 @@ for i in range(k):
     flist.append(p.expand().collect(z2).subs(z2=x+i))
     s += ' = ' + latex(polymod(flist[i], x, i, k)).replace('x','x_{n+1}') + '\n'
 s += '$\n'
-s += r'\begin{proof}' + '\n'
+# s += r'\begin{proof}' + '\n'
 s += proof(flist, 'f_{n+1}')
-s += r'\end{proof}' + '\n'
+# s += r'\end{proof}' + '\n'
 print s
 
 s = r'''\begin{myth} При $n \geqslant 1 $ для периодических функций пятизначной логики $f_n = f^{\left(n\right)}_{\left(1144\right)}$,
@@ -128,9 +130,9 @@ for i in range(k):
     glist.append(p.expand().collect(z2).subs(z2=x+i))
     s += ' = ' + latex(polymod(glist[i], x, i , k)).replace('x','x_{n+1}') + '\n'
 s += '$\n'
-s += r'\begin{proof}' + '\n'
+# s += r'\begin{proof}' + '\n'
 s += proof(glist, 'g_{n+1}')
-s += r'\end{proof}' + '\n'
+# s += r'\end{proof}' + '\n'
 print s
 
 # #s = ''
@@ -154,9 +156,9 @@ $g_n = f^{\left(n\right)}_{\left(1441\right)}$ верны следующие р�
         # print flist[j]
         # l.append((flist[j](x=z1) + i * glist[j](x=z1)).collect(z2)(z2=x+j))
     s += '\n$'
-    s += r'\begin{proof}' + '\n'
+    # s += r'\begin{proof}' + '\n'
     s += proof(l, 's_{n+1}^'+si, i)
-    s += r'\end{proof}' + '\n'
+    # s += r'\end{proof}' + '\n'
     print s
     sdict['s_{n+1}^'+si] = l
 
