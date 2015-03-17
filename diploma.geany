@@ -24,9 +24,12 @@ long_line_column=80
 
 [files]
 current_page=0
-FILE_NAME_0=26;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.tex;0;4
-FILE_NAME_1=24;Sage;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.sage;0;4
+FILE_NAME_0=14061;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.tex;0;4
+FILE_NAME_1=5553;Sage;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.sage;0;4
 FILE_NAME_2=0;None;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Ftmp.tmp;0;4
+FILE_NAME_3=236;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Flatex%2F2dfa.tex;0;4
+FILE_NAME_4=0;Sage;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fsage%2Ftree.sage;0;4
+FILE_NAME_5=0;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fprac%2Fparallel%2Freport.tex;0;4
 
 [VTE]
 last_dir=/home/ogneslav/prog/diploma
