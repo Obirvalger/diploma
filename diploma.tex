@@ -1,6 +1,11 @@
-\documentclass[a4paper, 12pt]{extarticle}
+\documentclass[a4paper, 12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    allcolors=blue
+}
 \usepackage{longtable, moreverb}
 \usepackage{ amssymb, latexsym, amsmath, amsthm}
 \newtheorem{myth}{Теорема}
@@ -168,6 +173,7 @@ $k$\nobreakdash-значной логики $f(x_1 , \dots , x_n)$ с перио
 влево. Пусть $\alpha = (a_1, \dots, a_n)$, тогда $\rol(\alpha, i) = (a_{(1+i)\mod k}, \dots, a_{(n+i)\mod k})$.
 
 \section{Результаты}
+\subsection{Теоремы}
 
 \begin{myth} При $n \geqslant 1 $ для периодических функций пятизначной логики $f_n = f^{\left(n\right)}_{\left(1144\right)}$,
 $g_n = f^{\left(n\right)}_{\left(1441\right)}$ верны следующие равенства:
@@ -523,7 +529,39 @@ s_{n+1}^4(\bar{x}_n, 4) = 4\,f_n + g_n + 2\,f_n + g_n + 0\,f_n + 2\,g_n + 4\,f_n
 
 \end{proof}
 
+\subsection{Таблица с функциями}
 
+\begin{center}
+\begin{longtable}{| l | l | l | l | l | l |}
+
+\hline $q_{n+1}$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+
+$f_{n+1}$ & $f s^4 s^1 s^4 f$ & $f s^1 s^4 s^1 f$ & $f s^2 s^1 g g$ & $f g f g f$ & $f s^3 s^4 g g$
+\\ \hline
+
+$g_{n+1}$ & $g s^1 s^4 s^1 g$ & $g s^4 s^1 s^4 g$ & $g s^2 s^4 f f$ & $g f g f g$ & $g s^3 s^1 f f$
+\\ \hline
+
+$s^1_{n+1}$ & $s^1 f g f s^1$ & $s^1 g f g s^1$ & $s^1 s^2 g s^4 s^4$ & $s^1 s^4 s^1 s^4 s^1$ & $s^1 s^3 f s^4 s^4$
+\\ \hline
+
+$s^2_{n+1}$ & $s^2 s^2 s^2 s^2 s^2$ & $s^2 s^2 s^2 s^2 s^2$ & $s^2 s^2 s^2 s^2 s^2$ & $s^2 s^2 s^2 s^2 s^2$ & $s^2 s^2 s^2 s^2 s^2$
+\\ \hline
+
+$s^3_{n+1}$ & $s^3 s^3 s^3 s^3 s^3$ & $s^3 s^3 s^3 s^3 s^3$ & $s^3 s^3 s^3 s^3 s^3$ & $s^3 s^3 s^3 s^3 s^3$ & $s^3 s^3 s^3 s^3 s^3$
+\\ \hline
+
+$s^4_{n+1}$ & $s^4 g f g s^4$ & $s^4 f g f s^4$ & $s^4 s^2 f s^1 s^1$ & $s^4 s^1 s^4 s^1 s^4$ & $s^4 s^3 g s^1 s^1$
+\\ \hline
+
+\caption{Результаты}
+\label{functab}
+\end{longtable}
+\end{center}
+
+\newpage
+\tableofcontents
 
 \makeatletter
 \renewcommand*{\@biblabel}[1]{\hfill#1.}
