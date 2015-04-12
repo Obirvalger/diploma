@@ -15,6 +15,9 @@ tmp*
 *.aux
 *.log
 *.toc
+*.nav
+*.snm
+*.dvi
 
 # игнорировать промежуточные sage файлы
 *.sage.py
