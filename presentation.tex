@@ -9,6 +9,7 @@
 \usepackage{comment}
 \newtheorem{myth}{Теорема}
 \newtheorem{mylm}{Лемма}
+\newtheorem*{mydef}{Определение}
 \newtheorem*{myco}{Следствие}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
 \usepackage{icomma}
@@ -33,6 +34,12 @@
 функций $f$ и $g$, где $f$ -- это периодическая симметрическая функция с периодом (1,1,4,4), а
 \mbox{$g$ -- это} периодическая симметрическая функция с периодом (1,4,4,1). А также его подкласс
 $\mathcal{F}$ состоящий из следующих четырех функций: $f,g,f+g,f+4g$.
+\only<2>{
+\begin{mydef}
+Класс функций $A$ называется вырожденным, если при $n \rightarrow \infty$ для любой функции
+${f_n \in A_n}$ длина этой функции есть $\overline{o}(5^n)$.
+\end{mydef}
+}
 \end{frame}
 
 \section{Основные теоремы и леммы}
