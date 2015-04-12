@@ -1,7 +1,11 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[bibliography=totoc, a4paper, 12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{hyperref}
+\usepackage{graphicx}
+% \usepackage{csquotes}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+\usepackage{icomma}
 \hypersetup{
     colorlinks,
     allcolors=blue
@@ -10,12 +14,13 @@
 \usepackage{ amssymb, latexsym, amsmath, amsthm}
 \newtheorem{myth}{Теорема}
 \newtheorem{mylm}{Лемма}
+\newtheorem*{myco}{Следствие}
 \usepackage{verbatim}
 \newcommand{\rol} {\textrm{rol}}
 \newcommand{\pphi}[1] {P^{\delta}(\varphi_{#1})}
-\textwidth=17cm       % Эти строки нужны для того,
-\textheight=20cm      % чтобы равенства уместились
-\oddsidemargin=-0.7cm % на странице
+\textwidth=18cm       % Эти строки нужны для того,
+\textheight=21cm      % чтобы равенства уместились
+\oddsidemargin=-1cm % на странице
 
 \sloppy
 
@@ -49,9 +54,9 @@
 \mathcode`\=="8000 \mathcode`\+="8000 \mathcode`\-="8000
 \mathcode`\<="8000 \mathcode`\>="8000
 
-%\tableofcontents
+% \tableofcontents
 
-%\newpage
+% \newpage
 
 \setcounter{secnumdepth}{-1}
 
@@ -174,8 +179,16 @@ $k$\nobreakdash-значной логики $f(x_1 , \dots , x_n)$ с перио
 Введем функцию $\rol(\alpha, i) \in E_k^n \times E_k \rightarrow E_k^n$, производящую чиклический сдвиг вектора $\alpha$
 влево. Пусть $\alpha = (a_1, \dots, a_n)$, тогда $\rol(\alpha, i) = (a_{(1+i)\mod k}, \dots, a_{(n+i)\mod k})$.
 
+Класс функций $A$ называется вырожденным, если при $n \rightarrow \infty$ для любой функции
+${f_n \in A_n}$ выполняется: $l(f_n) = \overline{o}(5^n)$.
+
+В данной работе рассматривается класс функций $\mathcal{A}$, состоящий из всех линейных комбинаций
+функций $f$ и $g$, где $f$ -- это периодическая симметрическая функция с периодом (1,1,4,4), а
+\mbox{$g$ -- это} периодическая симметрическая функция с периодом (1,4,4,1). А также его подкласс
+$\mathcal{F}$ состоящий из следующих четырех функций: $f,g,f+g,f+4g$.
+
 \section{Результаты}
-\subsection{Теоремы}
+\subsection{Поляризованные полиномы для функций из класса $\mathcal{A}$}
 
 \begin{myth} При $n \geqslant 1 $ для периодических функций пятизначной логики $f_n = f^{\left(n\right)}_{\left(1144\right)}$,
 $g_n = f^{\left(n\right)}_{\left(1441\right)}$ верны следующие равенства:
@@ -531,10 +544,10 @@ s_{n+1}^4(\bar{x}_n, 4) = 4\,f_n + g_n + 2\,f_n + g_n + 0\,f_n + 2\,g_n + 4\,f_n
 
 \end{proof}
 
-\subsection{Таблица с функциями}
-
+\subsection{Обобщение результатов в таблицах}
+Полученные результаты можно выразить следующей таблицей:
 \begin{center}
-\begin{longtable}{| l | l | l | l | l | l |}
+\begin{longtable}[h]{| l | l | l | l | l | l |}
 
 \hline $q_{n+1}$ & 0 & 1 & 2 & 3 & 4 \\
 \hline
@@ -557,14 +570,14 @@ $s^3_{n+1}$ & $s^3 s^3 s^3 s^3 s^3$ & $s^3 s^3 s^3 s^3 s^3$ & $s^3 s^3 s^3 s^3$ 
 $s^4_{n+1}$ & $s^4 g f g s^4$ & $s^4 f g f s^4$ & $s^4 s^2 f s^1 s^1$ & $s^4 s^1 s^4 s^1 s^4$ & $s^4 s^3 g s^1 s^1$
 \\ \hline
 
-\caption{Результаты}
+\caption{Выражения функций}
 \label{functab}
 \end{longtable}
 \end{center}
 
 \begin{myth}
 \label{ths2}
-При $n \geqslant 1$ длина полинома периодической функции пятизначной логики $s^2_n = f_n + 2\,g_n$
+При $n \geqslant 1$ длина полинома периодической функции пятизначной логики ${s^2_n = f_n + 2\,g_n}$
 при поляризации $\delta = (d_1,\ldots,d_n)$выражается следующей формулой:
 $$ l(P^{\delta}(s^2_n)) = 5^{n-m} \cdot 4^m ,$$
 где $m$ -- количество $4$ в векторе $\delta$.
@@ -584,7 +597,7 @@ $s^2_n$ выражается через $c=5$ функций $s^2_{n-1}$, есл
 
 \begin{myth}
 \label{ths3}
-При $n \geqslant 1$ длина полинома периодической функции пятизначной логики $s^3_n = f_n + 3\,g_n$
+При $n \geqslant 1$ длина полинома периодической функции пятизначной логики ${s^3_n = f_n + 3\,g_n}$
 при поляризации $\delta = (d_1,\ldots,d_n)$выражается следующей формулой:
 $$ l(P^{\delta}(s^3_n)) = 5^{n-m} \cdot 4^m ,$$
 где $m$ -- количество $2$ в векторе $\delta$.
@@ -606,6 +619,7 @@ $s^3_n$ выражается через $c=5$ функций $s^3_{n-1}$, есл
 % \newpage
 
 Обозначим $s^1$ и $s^4$ через $h$ и $t$ соответственно.
+Для удобства перепишем таблицу \ref{functab} в новых обозначениях:
 
 \begin{center}
 \begin{longtable}{| l | l | l | l | l | l |}
@@ -625,13 +639,13 @@ $h_{n+1}$ & $h f g f h$ & $h g f g h$ & $h s^2 g t t$ & $h t h t h$ & $h s^3 f t
 $t_{n+1}$ & $t g f g t$ & $t f g f t$ & $t s^2 f h h$ & $t h t h t$ & $t s^3 g h h$
 \\ \hline
 
-\caption{Результаты}
+\caption{Выражения функций}
 \label{functab2}
 \end{longtable}
 \end{center}
 
 Рассмотрим функции $f_1, g_1, h_1, t_1$. В следующей таблице приведены длины этих функций,
-в зависимости от поляризации.
+в зависимости от поляризации:
 \begin{center}
 \begin{longtable}{| l | l | l | l | l | l |}
 
@@ -650,44 +664,181 @@ $h_1$ & 5 & 5 & \textcolor{red}{3} & 3 & 3
 $t_1$ & 3 & 3 & 4 & \textcolor{red}{2} & 4
 \\ \hline
 
-\caption{Результаты}
-\label{functab3}
+\caption{Длины функций}
+\label{tab1}
 \end{longtable}
 \end{center}
 
+\subsection{Оценки для функций из класса $\mathcal{F}$}
+\subsubsection{Нижняя оценка}
 \begin{mylm}
 При векторе поляризации $\delta = (d_1,\dots,d_n), d_i \in \{0,1,3\}, i = 1,\dots,n$ и
-$\varphi_n$ -- любой из функций $f_n, g_n, h_n, t_n$ верно:
-$$l(\pphi{n}) \geqslant \frac{2}{5} \cdot 5^n$$
+$\varphi_n$ -- любой функции из $\mathcal{F}^n$ верно:
+$$l(\pphi{n}) \geqslant \frac{2}{5} \cdot 5^n.$$
 \end{mylm}
 \begin{proof}
-Из таблицы \ref{functab3} видно, что при $n=1,\ l(\pphi{1}) \geqslant 2$.
+Из таблицы \ref{tab1} видно, что при $n=1,\ l(\pphi{1}) \geqslant 2$.
 По теореме \ref{ths2} $l(P^{\delta}(s^2_n)) = 5^n$, а по теореме \ref{ths3}
 $l(P^{\delta}(s^3_n)) = 5^n$. Функция $\varphi_n$ выражается (см. таблицу \ref{functab2}) через $5$
-функции типа $\varphi_{n-1}$ или через $4$ функции типа $\varphi_{n-1}$ и одну из функций
+функций из $\mathcal{F}^{n-1}$ или через $4$ функции из $\mathcal{F}^{n-1}$ и одну из функций
 $\{s^2_{n-1}, s^3_{n-1}\}$, поэтому
-$${l(\pphi{n})\geqslant\min(\frac{2}{5}\cdot5^{n-1}\cdot5,\frac{2}{5}\cdot5^{n-1}\cdot4+1\cdot5^{n-1})} = \frac{2}{5}\cdot5^n.$$
+$${l(\pphi{n})\geqslant\min(\frac{2}{5}\cdot5^{n-1}\cdot5,\frac{2}{5}\cdot5^{n-1}\cdot4+1
+    \cdot5^{n-1})} = \frac{2}{5}\cdot5^n.$$
 \end{proof}
 
 \begin{mylm}
 При векторе поляризации $\delta = (d_1,\dots,d_n), d_i \in \{0,1,3,4\}, i = 1,\dots,n$ и
-$\varphi_n$ -- любой из функций $f_n, g_n, h_n, t_n$ верно:
+$\varphi_n$ -- любой функции из $\mathcal{F}^n$ верно:
 $$l(\pphi{n}) \geqslant \frac{2}{5} \cdot 5^n.$$
 \end{mylm}
 \begin{proof}
 Пусть $m$ -- количество $4$ в векторе $\delta$.
-Так как $s^2_n$ симметрическая функция, то можно считать, что
+Так как $\varphi_n$ симметрическая функция, то можно считать, что
 $$d_i \in \{0,1,3\},\ i=1,\dots,n-m \quad d_i = 4,\ i=n-m+1,\dots,n.$$
 Если $m=0$, то $l(\pphi{n}) \geqslant \frac{2}{5} \cdot 5^n$ по предыдущей лемме.
 Если $m \neq 0$, то по предыдущей лемме для всех $\varphi \in \{f,g,h,t\}\ $
 $l(\pphi{n-m}) \geqslant \frac{2}{5} \cdot 5^{n-m}$. При переходе от ${n-m}$ к ${n-m+1}$ переменная
-$x_{n-m+1}$ имеет поляризацию $4$ и $\varphi_{n-m+1}$ выражается через $4$ функции типа
-$\varphi_{n-m}$ и одну функцию $s^3_{n-m}$, причем по теореме \ref{ths3}
+$x_{n-m+1}$ имеет поляризацию $4$ и $\varphi_{n-m+1}$ выражается через $4$ функции из
+$\mathcal{F}^{n-m}$ и одну функцию $s^3_{n-m}$, причем по теореме \ref{ths3}
 $l(P^{(d_1,\dots,d_{n-m})}(s^3_{n-m})) = 5^{n-m}$, поэтому
 $l(\pphi{n-m+1}) \geqslant \frac{2}{5}\cdot5^{n-m}\cdot4+5^{n-m}>\frac{2}{5}\cdot5^{n-m+1}$. Пусть
 $k=n-m+1$, пока $k<n$ продолжим аналогичные рассуждения, переходя от $k$ к $k+1$. Получим, что
 $$l(\pphi{n}) \geqslant \frac{2}{5} \cdot 5^n.$$
 \end{proof}
+
+\begin{mylm}
+\label{lm2l}
+При векторе поляризации $\delta = (d_1,\dots,d_n), d_i = 2, i = 1,\dots,n$ и
+$\varphi_n$ -- любой функции из $\mathcal{F}^n$ верно:
+$$l(\pphi{n}) \geqslant 5^n - \frac{1}{2}4^n.$$
+\end{mylm}
+\begin{proof}
+При поляризации 2 $k+1$-ой переменной $\varphi_{k+1}$ выражается через четыре функции из
+$\mathcal{F}^k$ и одну функцию $s^2_k$, причем $l(P^{\delta}(s^2_k)) = 5^k$, а из таблицы
+\ref{tab1} видно, что длина минимальная длина среди функций из $\mathcal{F}^1$ при поляризации 2
+равна 3. Поэтому выражение для длины $\varphi_k$ можно получить решая следующую линейную
+неоднородную задачу:
+$$ \begin{array}{lcl}
+x_{k+1} &=& 4 x_k + 5^k \\
+x_1     &=& 3 
+\end{array} $$
+Решая эту задачу получим $l(\pphi{n}) \geqslant 5^n - \frac{1}{2}4^n$.
+\end{proof}
+
+\begin{mylm}
+\label{lm24l}
+При векторе поляризации $\delta=(d_1,\dots,d_n),\ d_i = 2,\ i=1,\dots,m,\ d_i=4,{\ i=n-m+1,\dots,n}$
+и $\varphi_n$ -- любой функции из $\mathcal{F}^n$ верно:
+$$l(\pphi{n})\geqslant\left(\left(\frac{5}{4}\right)^m-\frac{3}{2}\right)\cdot4^n+4^m\cdot5^{n-m}.$$
+\end{mylm}
+\begin{proof}
+Если $n=m$, то утверждение этой леммы следует из леммы \ref{lm2l}, поэтому будем считать, что $n>m$.
+При $k > m$ при поляризации 4 $k+1$-ой переменной $\varphi_{k+1}$ выражается через четыре функции
+из $\mathcal{F}^k$ и одну функцию $s^3_k$, причем $l(P^{\delta}(s^3_k)) = 5^{k-m} \cdot 4^m$, а по
+лемме \ref{lm2l} $l(\pphi{m}) \geqslant 5^m - \frac{1}{2}4^m$. Поэтому выражение для длины
+$\varphi_n$ можно получить решая следующую линейную неоднородную задачу:
+$$ \begin{array}{lcl}
+x_{k+1} &=& 4 x_k + 5^{k-m}\cdot 4^m \\
+x_m     &=& 5^m - \frac{1}{2}4^m
+\end{array} $$
+Решая эту задачу получим $l(\pphi{n}) \geqslant \left(\left(\frac{5}{4}\right)^m -
+    \frac{3}{2}\right)\cdot 4^n + 4^m \cdot 5^{n-m}$.
+\end{proof}
+
+\begin{myth}
+При векторе поляризации $\delta=(d_1,\dots,d_n)$ и $\varphi_n$ -- любой функции из
+$\mathcal{F}^n$ верно: $$l(\pphi{n}) \geqslant \left(\left(\left(\frac{5}{4}\right)^{m_2}-
+\frac{3}{2}\right) \cdot 4^{m_2+m_4}+4^{m_2}\cdot 5^{m_4} \right) \cdot 5^{n-m_2-m_4},\text{ где}$$
+$m_2$ -- число $2$ в $\delta$, а $m_4$ -- число $4$.
+\end{myth}
+\begin{proof}
+Пусть в векторе $\delta$ сначала идут $m_2$ 2, затем $m_4$ 4 и $n-m_2-m_4$ чисел из $\{0,1,3\}$.
+Тогда по лемме \ref{lm24l} $l(\pphi{m_2+m_4}) \geqslant \left(\left(\frac{5}{4}\right)^{m_2}
+- \frac{3}{2}\right)\cdot 4^{m_2+m_4} + 4^{m_2} \cdot 5^{m_4}$. При поляризации из {0,1,3} $k+1$-ой
+переменной $\varphi_{k+1}$ выражается через пять функции из $\mathcal{F}^k$. Из этого следует, что
+${l(\pphi{n}) \geqslant \left(\left(\left(\frac{5}{4}\right)^{m_2}-\frac{3}{2}\right) \cdot
+4^{m_2+m_4}+4^{m_2} \cdot 5^{m_4} \right) \cdot 5^{n-m_2-m_4}}$.
+\end{proof}
+
+% \begin{myco}
+% Для любой функции $\varphi_n$ из $\mathcal{F}^n$ верно:
+% $$ l(\varphi_n) \geqslant 4^n\left( 2 \cdot \left (\frac{5}{4} \right)^{\frac{n}{2}} -
+    % \frac{3}{2}\right).$$
+% \end{myco}
+
+\subsubsection{Верхняя оценка}
+
+\begin{myth}
+\label{thh}
+Для любой функции $\varphi_n$ из $\mathcal{F}^n$, при $n$ четном верно:
+$$ l(\varphi_n) \leqslant 4^n\left( 2 \cdot \left (\frac{5}{4} \right)^{\frac{n}{2}} - 1 \right).$$
+\end{myth}
+\begin{proof}
+% Не ограБудем считать, что $n$ -- четное.
+Пусть $m = \frac{n}{2}$.
+Рассмотрим вектор $\delta=(d_1,\dots,d_n),\ d_i = 2,\ i=1,\dots,m,\ d_i=4,
+{\ i=m+1,\dots,n}$. Сложность любой функции от $k$ переменных не больше $5^k$, поэтому
+$l(\pphi{m}) \leqslant 5^m$. При $k > m$ при поляризации 4 $k+1$-ой переменной
+$\varphi_{k+1}$ выражается через четыре функции из $\mathcal{F}^k$ и одну функцию $s^3_k$, причем
+$l(P^{\delta}(s^3_k)) = 5^{k-m} \cdot 4^m$. Поэтому выражение для длины
+$\varphi_n$ можно получить решая следующую линейную неоднородную задачу:
+$$ \begin{array}{lcl}
+x_{k+1} &=& 4 x_k + 5^{k-m}\cdot 4^m \\
+x_m     &=& 5^m
+\end{array} $$
+Решая эту задачу получим $l(\pphi{n}) \leqslant \left(\left(\frac{5}{4}\right)^m - 1 \right)\cdot
+4^n+4^m\cdot 5^{n-m} = 4^n \left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right)$.
+\end{proof}
+
+\begin{myco}
+Класс функций $\mathcal{A}$ является вырожденным.
+\end{myco}
+\begin{proof}
+По теоремам \ref{ths2}, \ref{ths3} $l(s^2_n)=l(s^3_n)=4^n=\overline{o}(5^n)$. По теореме \ref{thh}
+${l(\varphi_n) \leqslant 4^n \left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right)}$, для
+любой функции $\varphi_n \in \mathcal{F}_n$. И $\lim\limits_{n \rightarrow \infty} \frac{4^n
+\left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right)}{5^n} = 0$, поэтому
+$4^n \left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right) = \overline{o}(5^n)$.
+\end{proof}
+
+\newpage
+\section{Заключение}
+
+\subsection{Математические результаты}
+\begin{enumerate}
+\item Для всех функций из класса $\mathcal{A}$ были построены построены все поляризованные
+полиномы, выражающие функции от $n+1$ переменных через функции от $n$ переменных также принадлежащих
+классу $\mathcal{A}$;
+\item Установле точная длина, в зависимости от поляризации, для функций: $s^2_n$ и $s^3_n$;
+\item Доказано несколько теорем и лемм, из которых получается нижняя оценка для функций из
+класса $\mathcal{F}$;
+\item Установлена верняя оценка для функций из класса $\mathcal{F}$;
+\item Доказана вырожденность класса $\mathcal{A}$.
+\end{enumerate}
+
+\subsection{Программные результаты}
+Для получения результатов были написаны следующие программы:
+\begin{itemize}
+\item Программа на языке \ttfamily{C++}, реализующая построение поляризованных полиномов по
+    модулю~$k$, где $k \in {2,3,5,7}$, в программе используется алгоритм, описанный в \cite{sm09};
+\item Для этой программы был написан интерфейс на языке \ttfamily{Perl}, передставленный на
+    рисунке \ref{ps};
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{polyscreen.png}
+    \caption{Вид интерфейса \label{ps}}
+    \end{figure}
+\item Программа на языке \ttfamily{C++}, осуществляющая для заданного числа пременных $n$
+    "быстрый"{} поиск функций длина которых, в классе пляризованных полиномов, больше заданного
+    порога, среди заданного класса симметрических функций от $n$ переменных;
+\item С помощью системы компьютерной алгебры \ttfamily{Sage} \cite{sage} были произведены: получение
+    полиномиальных форм, поляризованных по разным векторам поляризации и подстановка значений в
+    полиномы для проверки правильности их построения.
+\end{itemize}
+Коды всех программ доступны в моем репозитории, располеженном по адресу:
+\mbox{\url{https://www.github.com/obirvalger/diploma}}.
+
+
 
 \newpage
 \tableofcontents
@@ -697,6 +848,7 @@ $$l(\pphi{n}) \geqslant \frac{2}{5} \cdot 5^n.$$
 \makeatother
 
 \newpage
+% \cleardoublepage
 
 \begin{thebibliography}{0}
 \bibitem{ue04} Угрюмов~Е.\,П. Цифровая схемотехника. СПб.: БХВ-Петербург, 2004.
@@ -716,6 +868,8 @@ $$l(\pphi{n}) \geqslant \frac{2}{5} \cdot 5^n.$$
 \bibitem{sm09} Селезнева С.\,H. Маркелов Н.\,К. Быстрый алгоритм построения векторов коэффициэнтов поляризованных полиномов
     k-значных функций // Ученые записки Казанского университета. Серия Физико-математические науки. 2009. 151.
     \textnumero 2 С.~147-151.
+\bibitem{sage} [Sage] William A. Stein et al., Sage Mathematics Software (Version 6.4).
+    The Sage Development Team, 2015, \url{http://www.sagemath.org}.
  
 \end{thebibliography}
 

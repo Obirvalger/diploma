@@ -2,6 +2,8 @@
 *.o
 *.out
 diploma
+find_longest
+polynomial
 # игнорировать все выходные файлы кроме output.txt
 output_*.txt
 
