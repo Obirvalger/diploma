@@ -23,14 +23,15 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=4
+current_page=2
 FILE_NAME_0=59746;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.tex;0;4
 FILE_NAME_1=162;Sage;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.sage;0;4
-FILE_NAME_2=0;None;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Ftmp.tmp;0;4
-FILE_NAME_3=172;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fpolynomial%2Freport.tex;0;4
-FILE_NAME_4=412;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fpresentation.tex;0;4
+FILE_NAME_2=125;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fpresentation.tex;0;4
 
 [VTE]
 last_dir=/home/ogneslav/prog/diploma
 
 [build-menu]
+EX_00_LB=V_iew PDF File
+EX_00_CM=qpdfview "%e.pdf"
+EX_00_WD=
