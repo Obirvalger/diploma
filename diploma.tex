@@ -1,4 +1,6 @@
-\documentclass[bibliography=totoc, a4paper, 12pt]{article}
+\documentclass[bibliography=totoc, a4paper, 14pt]{extarticle}
+\usepackage{setspace}
+\setstretch{1.3}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{hyperref}
@@ -22,6 +24,7 @@
 \oddsidemargin=-1cm   % на странице
 
 \sloppy
+% \fussy
 
 \xdef\LastDeclaredEncoding{T2A}
 % Переносы математики.
@@ -846,7 +849,7 @@ $4^n \left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right) = \overline{o}
 \makeatother
 
 \newpage
-
+\begin{singlespace}
 \begin{thebibliography}{0}
 \bibitem{ue04} Угрюмов~Е.\,П. Цифровая схемотехника. СПб.: БХВ-Петербург, 2004.
 \bibitem{sb90} Sasao T., Besslich P. On the complexity of mod-2 sum PLA’s  // IEEE Trans.on Comput. 39. N 2. 1990. P.~262--266. 
@@ -869,5 +872,5 @@ $4^n \left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right) = \overline{o}
     The Sage Development Team, 2015, \url{http://www.sagemath.org}.
  
 \end{thebibliography}
-
+\end{singlespace}
 \end{document}
