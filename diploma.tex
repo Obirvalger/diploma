@@ -67,7 +67,7 @@
 % \tableofcontents
 
 % \newpage
-\setcounter{page}{2}
+\setcounter{page}{3}
 \setcounter{secnumdepth}{-1}
 
 \tableofcontents
@@ -184,7 +184,8 @@ $k$\nobreakdash-значной логики $f(x_1 , \dots , x_n)$ с перио
 
 Пусть $T \geqslant  1$, $\Pi = \{\tau_1, \dots, \tau_s | \tau_i \in E_k^T\}$,
 $A_{\Pi} = \{f_{\tau}^{(n)}|\tau \in \Pi, n \geqslant 1\}$. Класс $A_{\Pi}$ называется вырожденным,
-если $\forall \tau \in \Pi$ верно, что $l(f_{\tau}^{(n)}) = \bar{o}(k^n)$, при $n\rightarrow \infty$.
+если $\forall \tau \in \Pi$ верно, что $l(f_{\tau}^{(n)}) = \bar{o}(k^n)$, при $n\rightarrow
+\infty$.
 
 В данной работе рассматривается класс функций $\mathcal{A}$, состоящий из всех линейных комбинаций
 функций $f_n$ и $g_n$, где $f_n$ -- это периодическая симметрическая функция с периодом (1,1,4,4), а
@@ -832,7 +833,7 @@ x_m     &=& 5^m - \frac{1}{2}4^m
 При векторе поляризации $\delta=(d_1,\dots,d_n)$ и $\varphi_n$ -- любой функции из
 $\mathcal{F}^n$ верно: $$l(\pphi{n}) \geqslant \left(\left(\left(\frac{5}{4}\right)^{m_2}-
 \frac{3}{2}\right) \cdot 4^{m_2+m_4}+4^{m_2}\cdot 5^{m_4} \right) \cdot 5^{n-m_2-m_4},\text{ где}$$
-$m_2$ -- число $2$ в $\delta$, а $m_4$ -- число $4$.
+$m_2$ -- число двоек в $\delta$, а $m_4$ -- число четверок.
 \end{myth}
 \begin{proof}
 Пусть в векторе $\delta$ сначала идут $m_2$ 2, затем $m_4$ 4 и $n-m_2-m_4$ чисел из $\{0,1,3\}$.
@@ -854,7 +855,8 @@ ${l(\pphi{n}) \geqslant \left(\left(\left(\frac{5}{4}\right)^{m_2}-\frac{3}{2}\r
 \begin{myth}
 \label{thh}
 Для любой функции $\varphi_n$ из $\mathcal{F}^n$, при $n$ четном верно:
-$$ l(\varphi_n) \leqslant 4^n\left( 2 \cdot \left (\frac{5}{4} \right)^{\frac{n}{2}} - 1 \right).$$
+$$ l(\varphi_n) \leqslant 5^n\left(2\cdot\left(\frac{4}{5}\right)^{\frac{n}{2}} -
+\left( \frac{4}{5} \right)^n\right).$$
 \end{myth}
 \begin{proof}
 Пусть $m = \frac{n}{2}$.
@@ -869,18 +871,21 @@ x_{k+1} &=& 4 x_k + 5^{k-m}\cdot 4^m \\
 x_m     &=& 5^m
 \end{array} $$
 Решая эту задачу получим $l(\pphi{n}) \leqslant \left(\left(\frac{5}{4}\right)^m - 1 \right)\cdot
-4^n+4^m\cdot 5^{n-m} = 4^n \left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right)$.
+4^n+4^m\cdot 5^{n-m} = 5^n\left(2\cdot\left(\frac{4}{5}\right)^{\frac{n}{2}} -
+\left( \frac{4}{5} \right)^n\right)$.
 \end{proof}
 
 \begin{myco}
 Класс функций $\mathcal{A}$ является вырожденным.
 \end{myco}
 \begin{proof}
-По теоремам \ref{ths2}, \ref{ths3} $l(s^2_n)=l(s^3_n)=4^n=\overline{o}(5^n)$. По теореме \ref{thh}
-${l(\varphi_n) \leqslant 4^n \left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right)}$, для
-любой функции $\varphi_n \in \mathcal{F}_n$. И $\lim\limits_{n \rightarrow \infty} \frac{4^n
-\left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right)}{5^n} = 0$, поэтому
-$4^n \left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right) = \overline{o}(5^n)$.
+По теоремам \ref{ths2}, \ref{ths3} $l(s^2_n)=l(s^3_n)=4^n=\bar{o}(5^n)$. По теореме \ref{thh}
+${l(\varphi_n) \leqslant 5^n\left(2\cdot\left(\frac{4}{5}\right)^{\frac{n}{2}} -
+\left( \frac{4}{5} \right)^n\right)}$, для
+любой функции $\varphi_n \in \mathcal{F}_n$. И $\lim\limits_{n \rightarrow \infty} \frac{5^n\left
+(2\cdot\left(\frac{4}{5}\right)^{\frac{n}{2}} - \left( \frac{4}{5} \right)^n\right)}{5^n} = 0$,
+поэтому $5^n\left(2\cdot\left(\frac{4}{5}\right)^{\frac{n}{2}} -\left( \frac{4}{5} \right)^n\right)
+= \bar{o}(5^n)$.
 \end{proof}
 
 \newpage
@@ -913,9 +918,9 @@ $4^n \left(2 \cdot\left(\frac{5}{4}\right)^{\frac{n}{2}}-1\right) = \overline{o}
 \item Программа на языке {\ttfamily{C++}}, осуществляющая для заданного числа пременных $n$
     "быстрый"{} поиск функций длина которых, в классе пляризованных полиномов, больше заданного
     порога, среди заданного класса симметрических функций от $n$ переменных;
-\item С помощью системы компьютерной алгебры \ttfamily{Sage} \cite{sage} были произведены: получение
-    полиномиальных форм, поляризованных по разным векторам поляризации и подстановка значений в
-    полиномы для проверки правильности их построения.
+\item С помощью системы компьютерной алгебры {\ttfamily{Sage}} \cite{sage} были произведены:
+    получение полиномиальных форм, поляризованных по разным векторам поляризации и подстановка
+    значений в полиномы для проверки правильности их построения.
 \end{itemize}
 Коды всех программ доступны в моем репозитории, располеженном по адресу:
 \mbox{\url{https://www.github.com/obirvalger/diploma}}.

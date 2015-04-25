@@ -35,29 +35,41 @@
 \section{Основные определения}
 \begin{frame}
 \frametitle{\insertsection}
-\begin{mytext}
+\begin{mydef}
 Пусть $k \geqslant 2$ -- натуральное число, $E_k = \{0, 1, \dots, k - 1\}$.
-\end{mytext}
+\end{mydef}
 
-\begin{mytext}
+\begin{mydef}
 $f^{(n)} : E_k^n \rightarrow E_k$ называется функцией $k$-значной логики.
-\end{mytext}
+\end{mydef}
 
-\begin{mytext}
+\begin{mydef}
+$P_k^n$ -- множество всех функций $k$-значной логики, зависящих от $n$ переменных.
+\end{mydef}
+
+\begin{mydef}
 Поляризованным мономом $K^{\delta}$ по вектору поляризации
 $\delta = (d_1, \dots, d_n) \in E_k^n$, назовем
 $(x_{i_1} + d_{i_1} )^{m_1}\cdots(x_{i_r} + d_{i_r})^{m_r}$.
-\end{mytext}
+\end{mydef}
+\end{frame}
 
-\begin{mytext}
+\begin{frame}
+\frametitle{\insertsection}
+\begin{mydef}
 Поляризованная полиномиальная нормальная форма (ППФ) по вектору поляризации
 $\delta$ -- это $\sum\limits_{i=1}^lc_i \cdot K^{\delta}_i$; $K^{\delta}_i \neq K^{\delta}_j,
 i \neq j$. Число $l$ называется длиной ППФ.
-\end{mytext}
+\end{mydef}
 
-\begin{mytext}
+\begin{mydef}
 $P^{\delta}(f)$ -- это минимальная по длине, поляризованная по $\delta$ ППФ, реализующая $f$.
-\end{mytext}
+\end{mydef}
+
+\begin{mydef}
+$L_k(n) = \max\limits_{f\in P_k^n} \min\limits_{\delta \in E_k^n} l(P^{\delta}(f))$ -- функция
+Шеннона длины.
+\end{mydef}
 \end{frame}
 
 \section{Известные оценки}
@@ -116,8 +128,10 @@ $(1,4,4,1)$ соответственно. Введем класс $\mathcal{A}$ 
 функций: $с \cdot f,c \cdot g,c\cdot(f+g),c \cdot (f+4g)$, $c \in \{1,2,3,4\}$.
 \end{mytext}
 \begin{mydef}
-Класс функций $A$ называется вырожденным, если при $n \rightarrow \infty$ для любой функции
-${f_n \in A_n}$ длина этой функции есть $\overline{o}(5^n)$.
+Пусть $T \geqslant  1$, $\Pi = \{\tau_1, \dots, \tau_s | \tau_i \in E_k^T\}$,
+$A_{\Pi} = \{f_{\tau}^{(n)}|\tau \in \Pi, n \geqslant 1\}$. Класс $A_{\Pi}$ называется вырожденным,
+если $\forall \tau \in \Pi$ верно, что $l(f_{\tau}^{(n)}) = \bar{o}(k^n)$, при $n\rightarrow
+\infty$.
 \end{mydef}
 }
 \end{frame}
@@ -134,8 +148,8 @@ ${f_n \in A_n}$ длина этой функции есть $\overline{o}(5^n)$.
 при поляризации $\delta = (d_1,\ldots,d_n)$выражается следующей формулой:
 $$ l(P^{\delta}(s_n)) = 5^{n-m} \cdot 4^m ,$$
 где $m = \begin{cases}
-\text{количество } 4 \text{ в векторе } \delta, \text{ если } s_n = s^2_n; \\
-\text{количество } 2 \text{ в векторе } \delta, \text{ если } s_n = s^2_n.
+\text{количество } \text{ <<4>> в векторе } \delta, \text{ если } s_n = s^2_n; \\
+\text{количество } \text{ <<2>> в векторе } \delta, \text{ если } s_n = s^3_n.
 \end{cases}$
 \end{myth}
 \end{frame}
@@ -164,7 +178,7 @@ $$l(\pphi{n})\geqslant\left(\left(\frac{5}{4}\right)^m-\frac{3}{2}\right)\cdot4^
 При векторе поляризации $\delta=(d_1,\dots,d_n)$ и $\varphi_n$ -- любой функции из
 $\mathcal{F}^n$ верно: $$l(\pphi{n}) \geqslant \left(\left(\left(\frac{5}{4}\right)^{m_2}-
 \frac{3}{2}\right) \cdot 4^{m_2+m_4}+4^{m_2}\cdot 5^{m_4} \right) \cdot 5^{n-m_2-m_4},$$
-где $m_2$ -- число $2$ в $\delta$, а $m_4$ -- число $4$.
+где $m_2$ -- число <<2>> в $\delta$, а $m_4$ -- число <<4>>.
 \end{myth}
 }
 \end{frame}
@@ -177,7 +191,8 @@ $\mathcal{F}^n$ верно: $$l(\pphi{n}) \geqslant \left(\left(\left(\frac{5}{4
 \begin{myth}
 \label{thh}
 Для любой функции $\varphi_n$ из $\mathcal{F}^n$, при $n$ четном верно:
-$$ l(\varphi_n) \leqslant 4^n\left( 2 \cdot \left (\frac{5}{4} \right)^{\frac{n}{2}} - 1 \right).$$
+$$ l(\varphi_n) \leqslant 5^n\left(2\cdot\left(\frac{4}{5}\right)^{\frac{n}{2}} -
+\left( \frac{4}{5} \right)^n\right).$$
 \end{myth}
 }
 \only<2> {
@@ -233,6 +248,7 @@ $$ l(\varphi_n) \leqslant 4^n\left( 2 \cdot \left (\frac{5}{4} \right)^{\frac{n}
 }
 \end{frame}
 
+\section*{}
 \begin{frame}[plain,c]
 \begin{center}
 \Huge Спасибо за внимание
