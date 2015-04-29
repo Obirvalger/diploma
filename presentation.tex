@@ -21,16 +21,23 @@
 % \renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
 % \sloppy
 
+% \institute[МГУ]{МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ \\
+    % Факультет Вычислительной Математики и Кибернетики}
 \title{О длине некоторых периодических функций пятизначной логики в классе поляризованных
     полиномиальных форм}
-\author{Михаил Гордеев}
-\date{\today}
-\institute[МГУ]{МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ \\
-    Факультет Вычислительной Математики и Кибернетики}
+\author{Михаил Гордеев\\
+\bigskip
+Научный руководитель -- доц. Селезнева С.Н.\\}
+\date{}
 
 \begin{document}
 
-\frame[plain]{\titlepage}
+\frame[plain]{
+\begin{center}
+МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ \\
+    Факультет Вычислительной Математики и Кибернетики
+\end{center}
+\titlepage}
 
 \section{Основные определения}
 \begin{frame}
@@ -63,7 +70,8 @@ i \neq j$. Число $l$ называется длиной ППФ.
 \end{mydef}
 
 \begin{mydef}
-$P^{\delta}(f)$ -- это минимальная по длине, поляризованная по $\delta$ ППФ, реализующая $f$.
+$P^{\delta}(f)$ -- это поляризованная по $\delta$ ППФ, реализующая $f$, $l(P^{\delta}(f))$ --
+длина этой ППФ.
 \end{mydef}
 
 \begin{mydef}
@@ -119,20 +127,26 @@ $f(\pi(x_1), \dots, \pi(x_n)) = f(x_1, \dots, x_n)$
 периодом $\tau = (\tau_0 \tau_1 \dots \tau_{T-1}) \in E_k^T$ , если $f(\alpha) = \tau_j$ при
 $|\alpha| = j\pmod T$ для каждого набора $\alpha \in E_k^n$.
 \end{mydef}
-}
-\only<2> {
-\begin{mytext}
-Рассмотрим функции $f$ и $g$ -- периодические симметрические функции с периодами $(1,1,4,4)$ и
-$(1,4,4,1)$ соответственно. Введем класс $\mathcal{A}$ функций вида $a \cdot f + b \cdot g$, $a,b
-\in E_k$, $a \neq 0 \text{ или }b \neq 0$. И его подкласс подкласс $\mathcal{F}$ состоящий из
-функций: $с \cdot f,c \cdot g,c\cdot(f+g),c \cdot (f+4g)$, $c \in \{1,2,3,4\}$.
-\end{mytext}
 \begin{mydef}
 Пусть $T \geqslant  1$, $\Pi = \{\tau_1, \dots, \tau_s | \tau_i \in E_k^T\}$,
 $A_{\Pi} = \{f_{\tau}^{(n)}|\tau \in \Pi, n \geqslant 1\}$. Класс $A_{\Pi}$ называется вырожденным,
-если $\forall \tau \in \Pi$ верно, что $l(f_{\tau}^{(n)}) = \bar{o}(k^n)$, при $n\rightarrow
+если $\forall \tau \in \Pi$ верно, что $l(f_{\tau}^{(n)}) = \bar{o}(k^n)$ при $n\rightarrow
 \infty$.
 \end{mydef}
+}
+\only<2> {
+\begin{mytext}
+Рассмотрим функции $f_n$ и $g_n$ -- периодические симметрические функции с периодами $(1,1,4,4)$ и
+$(1,4,4,1)$ соответственно, $n \geqslant 1$.
+
+Введем класс $\mathcal{A}$ функций вида $a \cdot f_n +
+ b \cdot g_n$, $a,b
+\in E_k$, $a \neq 0 \text{ или }b \neq 0$.
+
+И его подкласс подкласс $\mathcal{F}$ состоящий из
+функций: $с \cdot f_n,c \cdot g_n,c\cdot(f_n+g_n),c \cdot (f_n+4g_n)$, $c \in \{1,2,3,4\}$.
+\end{mytext}
+
 }
 \end{frame}
 
