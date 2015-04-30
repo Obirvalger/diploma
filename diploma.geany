@@ -23,11 +23,9 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=3
-FILE_NAME_0=13134;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.tex;0;4
-FILE_NAME_1=3838;Sage;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.sage;0;4
-FILE_NAME_2=4262;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fpresentation.tex;0;4
-FILE_NAME_3=1043;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Ftitul.tex;0;4
+current_page=0
+FILE_NAME_0=57843;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fdiploma.tex;0;4
+FILE_NAME_1=5534;LaTeX;0;EUTF-8;0;1;0;%2Fhome%2Fogneslav%2Fprog%2Fdiploma%2Fpresentation.tex;0;4
 
 [VTE]
 last_dir=/home/ogneslav/prog/diploma

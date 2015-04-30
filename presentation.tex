@@ -65,8 +65,8 @@ $(x_{i_1} + d_{i_1} )^{m_1}\cdots(x_{i_r} + d_{i_r})^{m_r}$.
 \frametitle{\insertsection}
 \begin{mydef}
 Поляризованная полиномиальная нормальная форма (ППФ) по вектору поляризации
-$\delta$ -- это $\sum\limits_{i=1}^lc_i \cdot K^{\delta}_i$; $K^{\delta}_i \neq K^{\delta}_j,
-i \neq j$. Число $l$ называется длиной ППФ.
+$\delta$ -- это $\sum\limits_{i=1}^lc_i \cdot K^{\delta}_i$; $c_i \in E_k \backslash \{0\}$,
+$K^{\delta}_i \neq K^{\delta}_j,i \neq j$. Число $l$ называется длиной ППФ.
 \end{mydef}
 
 \begin{mydef}
@@ -85,8 +85,8 @@ $L_k(n) = \max\limits_{f\in P_k^n} \min\limits_{\delta \in E_k^n} l(P^{\delta}(f
 \frametitle{\insertsection}
 \only<1->{
 \begin{mytext}
-Супрун В.\,П. [1993г.], Sasao T. [1990г.] -- получили некоторые оценки для функций алгебры логики в классе
-ППФ.
+Супрун В.\,П. [1993г.], Sasao T. [1990г.] -- получили некоторые оценки для функций алгебры логики
+в классе ППФ.
 \end{mytext}
 }
 \only<2->{
@@ -124,8 +124,9 @@ $f(\pi(x_1), \dots, \pi(x_n)) = f(x_1, \dots, x_n)$
 \end{mydef}
 \begin{mydef}
 Симметрическая функция $f(x_1, \dots, x_n)$ называется периодической c
-периодом $\tau = (\tau_0 \tau_1 \dots \tau_{T-1}) \in E_k^T$ , если $f(\alpha) = \tau_j$ при
-$|\alpha| = j\pmod T$ для каждого набора $\alpha \in E_k^n$.
+периодом $\tau = (\tau_0 \tau_1 \dots \tau_{T-1}) \in E_k^T$, 
+% если $f(\alpha) = \tau_j$ при $|\alpha| = j\pmod T$ для каждого набора $\alpha \in E_k^n$.
+если $f(\alpha) = \tau_j, |\alpha| = j\pmod T\ \forall \alpha = (a_1,\dots,a_n)\in E_k^n;|\alpha| = \sum_{i=1}^na_i$.
 \end{mydef}
 \begin{mydef}
 Пусть $T \geqslant  1$, $\Pi = \{\tau_1, \dots, \tau_s | \tau_i \in E_k^T\}$,
@@ -139,12 +140,11 @@ $A_{\Pi} = \{f_{\tau}^{(n)}|\tau \in \Pi, n \geqslant 1\}$. Класс $A_{\Pi}$
 Рассмотрим функции $f_n$ и $g_n$ -- периодические симметрические функции с периодами $(1,1,4,4)$ и
 $(1,4,4,1)$ соответственно, $n \geqslant 1$.
 
-Введем класс $\mathcal{A}$ функций вида $a \cdot f_n +
- b \cdot g_n$, $a,b
+Введем класс $\mathcal{A}$ функций вида $a \cdot f_n + b \cdot g_n$, $a,b
 \in E_k$, $a \neq 0 \text{ или }b \neq 0$.
 
-И его подкласс подкласс $\mathcal{F}$ состоящий из
-функций: $с \cdot f_n,c \cdot g_n,c\cdot(f_n+g_n),c \cdot (f_n+4g_n)$, $c \in \{1,2,3,4\}$.
+И его подкласс $\mathcal{F}$ состоящий из
+функций: $с \cdot f_n, c \cdot g_n, c\cdot(f_n+g_n), c \cdot (f_n+4g_n)$, $c \in \{1,2,3,4\}$.
 \end{mytext}
 
 }
@@ -222,10 +222,10 @@ $$ l(\varphi_n) \leqslant 5^n\left(2\cdot\left(\frac{4}{5}\right)^{\frac{n}{2}} 
 \frametitle{\insertsection}
 \framesubtitle{\insertsubsection}
 \begin{enumerate}
-\item Для всех функций из класса $\mathcal{A}$ были построены построены все поляризованные
+\item Для всех функций из класса $\mathcal{A}$ были построены все поляризованные
 полиномы, выражающие функции от $n+1$ переменных через функции от $n$ переменных также принадлежащих
 классу $\mathcal{A}$;
-\item<2-> Установле точная длина, в зависимости от поляризации, для функций: $s^2_n$ и $s^3_n$;
+\item<2-> Установлена точная длина, в зависимости от поляризации, для функций: $s^2_n$ и $s^3_n$;
 \item<3-> Доказано несколько теорем и лемм, из которых получается нижняя оценка для функций из
 класса $\mathcal{F}$;
 \item<4-> Установлена верняя оценка для функций из класса $\mathcal{F}$;
