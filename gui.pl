@@ -1,8 +1,12 @@
 #! /usr/bin/perl
 use v5.14;
+use Cwd 'abs_path';
+use File::Basename 'dirname';
 use Tk;
 use strict;
 #~ use warnings; 
+
+chdir dirname abs_path $0;
 
 my $k = 2;
 my $type = "function";
